@@ -43,8 +43,24 @@ footer{text-align:center;padding:20px;color:#cab9d4;font-size:.85rem}
 @media(max-width:680px){.bar{flex-wrap:wrap;padding-block:18px}nav{gap:14px}.hero{grid-template-columns:1fr;gap:28px}.portrait{max-width:300px;width:100%}.panels{grid-template-columns:1fr}.socials{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
-</head><body><header><div class="bar"><a class="brand" href="index.html">Viola.dev</a><nav aria-label="Main navigation"><a href="index.html">Home</a><a href="about.html">About</a><a href="skills.html">Skills</a><a href="projects.html">Projects</a><a href="contact.html">Contact</a></nav></div></header><main><section class="panels" aria-label="Portfolio details">
-<details id="skills" open><summary>What I do</summary><div class="detail"><p>Frontend design, backend development, and graphic design.</p></div></details>
-
-<details id="stack" open><summary>Tech Stack</summary><div class="detail stack"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>GitHub</span><span>VS Code</span></div></details>
-</section></main></body></html>
+<style>
+.skills-intro h1{color:#bd83f3;font-size:clamp(2.5rem,5vw,4rem);margin:0 0 20px}
+.skills-intro p{font-size:1.15rem;line-height:1.7;color:#dfd1e9;max-width:700px}
+.skills-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.skill-card{padding:30px;border:1px solid #62407b;border-radius:24px;background:linear-gradient(135deg,#29153e,#1a1027)}
+.skill-mark{display:inline-grid;place-items:center;min-width:58px;height:58px;padding:8px;border-radius:15px;background:#43225d;color:#ead5fc;font:bold 1.2rem Arial,sans-serif}
+.skill-card h2{text-align:left;margin:24px 0 16px;font-size:1.65rem}
+.skill-card p{color:#dfd1e9;line-height:1.75;margin:0}
+.skills-tools{margin:32px 0 50px;padding:26px;border:1px solid #503264;border-radius:20px}
+.skills-tools h2{text-align:left;font-size:1.3rem}
+.tool-tags{display:flex;flex-wrap:wrap;gap:12px}.tool-tags span{background:#29153e;padding:10px 16px;border-radius:24px;color:#ead5fc}
+@media(max-width:760px){.skills-grid{grid-template-columns:1fr}.skill-card{padding:26px}}
+</style></head><body><header><div class="bar"><a class="brand" href="index.html">Viola.dev</a><nav aria-label="Main navigation"><a href="index.html">Home</a><a href="about.html">About</a><a href="skills.html">Skills</a><a href="projects.html">Projects</a><a href="contact.html">Contact</a></nav></div></header><main>
+<section class="skills-intro"><h1>My Skills</h1><p>The technologies I use to build website structure, create visual designs, and add interactive features.</p></section>
+<div class="skills-grid">
+<article class="skill-card"><span class="skill-mark" aria-hidden="true">&lt;/&gt;</span><h2>HTML</h2><p>I use HTML to organize website content into pages, headings, images, links, and forms.</p></article>
+<article class="skill-card"><span class="skill-mark" aria-hidden="true">CSS</span><h2>CSS</h2><p>I use CSS to style layouts, colours, typography, and spacing, and adapt pages to different screen sizes.</p></article>
+<article class="skill-card"><span class="skill-mark" aria-hidden="true">JS</span><h2>JavaScript</h2><p>I use JavaScript to add interactive features and respond to visitors’ actions on a website.</p></article>
+</div>
+<section class="skills-tools"><h2>Tools I work with</h2><div class="tool-tags"><span>GitHub</span><span>VS Code</span></div></section>
+</main></body></html>
