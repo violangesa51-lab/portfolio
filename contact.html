@@ -52,6 +52,19 @@ footer{text-align:center;padding:20px;color:#cab9d4;font-size:.85rem}
 .contact-button{display:block;text-align:center;margin-top:auto;padding:14px 18px;border:1px solid #aa78d0;border-radius:10px;background:#7330a6;font: .9rem Arial,sans-serif}
 .contact-button:hover{background:#8a40c0;color:white}
 @media(max-width:850px){.contact-grid{grid-template-columns:1fr}.contact-card{padding:26px}.contact-button{align-self:flex-start;min-width:180px}}
+.project-brief{max-width:850px;margin:0 auto 60px;padding:32px;border:1px solid #62407b;border-radius:24px;background:linear-gradient(135deg,#29153e,#1a1027)}
+.brief-heading h2{text-align:left;color:#cfacf1;font-size:1.8rem;margin:0 0 10px}
+.brief-heading p{color:#dfd1e9;line-height:1.7;margin:0 0 24px}
+.brief-form{display:grid;gap:12px}
+.brief-form label{font-weight:bold;margin-top:6px}
+.brief-form input,.brief-form select,.brief-form textarea{width:100%;padding:13px 14px;border:1px solid #62407b;border-radius:9px;background:#120b1b;color:#f8f4fb;font:1rem Arial,sans-serif}
+.brief-form input:focus,.brief-form select:focus,.brief-form textarea:focus{outline:2px solid #bd83f3;outline-offset:2px}
+.brief-form textarea{resize:vertical;line-height:1.55}
+.brief-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.brief-field{display:grid;gap:8px}
+.brief-form .contact-button{cursor:pointer;width:100%;margin-top:10px}
+.brief-note{margin:0;color:#cab9d4;font-size:.92rem;line-height:1.6}
+@media(max-width:680px){.project-brief{padding:24px;margin-bottom:36px}.brief-row{grid-template-columns:1fr}}
 </style><style id="phone-layout">
 @media(max-width:680px){
 body{font-size:17px;line-height:1.55}
@@ -86,4 +99,15 @@ section:not(.hero){padding-block:28px}
 <article class="contact-card"><span class="contact-icon" aria-hidden="true">&#9742;</span><h2>WhatsApp</h2><p>Start a conversation about your website or design ideas.</p><div class="contact-value">0794424336</div><a class="contact-button" href="https://wa.me/254794424336?text=Hi%20Viola%2C%20I%27d%20like%20to%20discuss%20a%20project.%20I%20need%20help%20with%3A%20a%20website%2C%20website%20update%2C%20or%20graphic%20design.%20Here%20are%20a%20few%20details%3A%20" target="_blank" rel="noopener">Start a project</a></article>
 <article class="contact-card"><span class="contact-icon" aria-hidden="true">&lt;/&gt;</span><h2>GitHub</h2><p>Explore my repositories and see the code behind my work.</p><div class="contact-value">violangesa51-lab</div><a class="contact-button" href="https://github.com/violangesa51-lab" target="_blank" rel="noopener">Visit my GitHub</a></article>
 </div>
+<section class="project-brief" aria-labelledby="brief-title"><div class="brief-heading"><h2 id="brief-title">Tell me about your project</h2><p>Share a few details and I’ll prepare a WhatsApp message for you to review.</p></div>
+<form class="brief-form" id="project-brief-form">
+<div class="brief-field"><label for="brief-name">Your name <span aria-hidden="true">*</span></label><input id="brief-name" name="name" type="text" autocomplete="name" required></div>
+<div class="brief-field"><label for="brief-service">What do you need? <span aria-hidden="true">*</span></label><select id="brief-service" name="service" required><option value="">Choose a service</option><option>New website</option><option>Website update or redesign</option><option>Graphic design</option><option>Not sure yet</option></select></div>
+<div class="brief-row"><div class="brief-field"><label for="brief-budget">Budget range (optional)</label><input id="brief-budget" name="budget" type="text" placeholder="e.g. KSh 20,000–40,000"></div><div class="brief-field"><label for="brief-date">Preferred completion date (optional)</label><input id="brief-date" name="date" type="date"></div></div>
+<div class="brief-field"><label for="brief-details">What would you like to make or improve? <span aria-hidden="true">*</span></label><textarea id="brief-details" name="details" rows="5" required placeholder="Describe your project, the features you need, or the design you have in mind."></textarea></div>
+<button class="contact-button" type="submit">Continue on WhatsApp</button><p class="brief-note">WhatsApp will open with your message ready. Review it and tap Send when you’re happy.</p>
+</form></section>
+<script>
+document.getElementById('project-brief-form').addEventListener('submit',function(event){event.preventDefault();const fields=new FormData(event.currentTarget);const message="Hi Viola, my name is "+fields.get('name')+". I need help with: "+fields.get('service')+". Budget range: "+(fields.get('budget')||'Not specified')+". Preferred completion date: "+(fields.get('date')||'Flexible')+". Project details: "+fields.get('details');const url='https://wa.me/254794424336?text='+encodeURIComponent(message);window.open(url,'_blank','noopener,noreferrer');});
+</script>
 </main></body></html>
